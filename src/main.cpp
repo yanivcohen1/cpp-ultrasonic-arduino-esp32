@@ -25,8 +25,8 @@ int last_sliderPot = -1;
 bool markForSave = false;
 String potString = "";
 
-const char* ssid = "HOTBOX-89BA-yaniv";
-const char* password = "0528728544";
+const char* ssid = "ssid name";
+const char* password = "password";
 
 struct  Send_Data {
     String distance = "distance";
