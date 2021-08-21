@@ -16,8 +16,6 @@ void SH1106_DIP::dispay(String line1, String line2, String line3, String line4) 
   // u8g2.clear(); // clear screen 
   SH1106_DIP::u8g2_s->clearBuffer();					// clear the internal memory
   SH1106_DIP::u8g2_s->setFont(u8g2_font_ncenB08_tr);	// choose a suitable font
-  // char charBuf[inString.length() + 1];
-  // inString.toCharArray(charBuf, inString.length());
   SH1106_DIP::u8g2_s->drawStr(0,10, line1.c_str());
   SH1106_DIP::u8g2_s->drawStr(0,20, line2.c_str()); // write something to the internal memory
   SH1106_DIP::u8g2_s->drawStr(0,30, line3.c_str()); // write something to the internal memory
