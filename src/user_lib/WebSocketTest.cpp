@@ -6,8 +6,8 @@
 namespace WebServer
 {
   // Replace with your network credentials
-  const char* ssid = "ssid-name";
-  const char* password = "password";
+  const char* ssid = "HOTBOX-89BA-yaniv";
+  const char* password = "0528728544";
 
   bool ledState = 0;
   const int ledPin = 27;

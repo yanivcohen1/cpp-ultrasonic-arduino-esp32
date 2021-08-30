@@ -1,5 +1,9 @@
 #pragma once
+#include <stdlib.h>     /* qsort */
+#include "Arduino.h"
+
 namespace Ultrasinic
 {
-    int ultrasinicDistance(int trigPin, int echoPin);
+    void setup(int trigPin, int echoPin);
+    int ultrasinicDistance();
 }

@@ -1,10 +1,16 @@
-#include <stdlib.h>     /* qsort */
-#include "Arduino.h"
+#include "Header/user_lib/Ultrasinic.h"
 
 namespace Ultrasinic
 {
   int calcDisctance = 0;
+  static int trigPin = 0;
+  static int echoPin = 0;
 
+  void setup(int _trigPin, int _echoPin) {
+    trigPin = _trigPin;
+    echoPin = _echoPin;
+  }
+  
   int compare (const void * a, const void * b)
   {
     return ( *(int*)a - *(int*)b );
@@ -17,7 +23,7 @@ namespace Ultrasinic
     return (double)(arr[(size-1)/2] + arr[size/2])/2.0;
   }
 
-  int ultrasinicDistance(int trigPin, int echoPin) {
+  int ultrasinicDistance() {
       int arr[10] = {0};
       for (int i = 0; i < 10; i++) {
           digitalWrite(trigPin, LOW);

@@ -132,7 +132,7 @@
 
             function openWebSocket()
             {
-                var wsUri           = `ws://${window.location.hostname}/ws`; // "ws://" + window.location.hostname + '/ultrasonic_page';
+                var wsUri           = `ws://${window.location.hostname}/ultrasonic_page`; // "ws://" + window.location.hostname + '/ultrasonic_page';
                 writeToScreen("Connection to " + wsUri + "...")
                 websocket           = new WebSocket(wsUri);
                 websocket.onopen    = function(evt) { onOpen    (evt) };

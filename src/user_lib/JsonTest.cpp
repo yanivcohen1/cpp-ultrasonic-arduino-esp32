@@ -56,10 +56,20 @@ void json_setup() {
 
   Serial.println("Changing Sensor");
 
-  doc_from_json["sensor"] = "GPS2";
+  doc_from_json["sensor"] = "GPS2"; // update
 
   // print the update sensore
   serializeJsonPretty(doc_from_json, Serial);
+  
+  JsonObject sensor1 = doc_from_json["time"];
+  sensor1.remove("time"); // remove
+  // looping all
+  JsonObject documentRoot = doc_from_json.as<JsonObject>();
+  for (JsonPair keyValue : documentRoot) {
+    Serial.print(keyValue.value().as<const char*>());
+    Serial.print(" = ");
+    Serial.println(keyValue.key().c_str());
+  }
 
   // ***********************************************************************
   // Allocate the JSON document
@@ -113,4 +123,14 @@ void json_setup() {
   Serial.print("contain field 'sensor1': ");
   Serial.println(!sense1.isNull());
 
+  //  **************************************************
+  // nested objects set
+  // doc_to_json["list"][0]["main"]["temp"] = true;
+  // nested object find
+  // const char* sensor = doc_to_json["list"][0]["main"]["temp"];
+  // nested add wifi inside list (list:{wifi: TheBatCave})
+  JsonObject wifi  = doc_to_json["sensor"].createNestedObject("wifi");
+  wifi["SSID"] = "TheBatCave"; // sensor:{wifi: {SSID: TheBatCave}}
+  Serial.println(doc_to_json["sensor"]["wifi"].as<const char*>());
+  serializeJsonPretty(doc_to_json, Serial);
 }
