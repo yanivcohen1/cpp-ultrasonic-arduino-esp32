@@ -19,8 +19,8 @@
 
 SH1106_DIP sh1106_dip; // screen display
 
-const char* ssid = "HOTBOX-89BA-yaniv";
-const char* password = "0528728544";
+const char* ssid = "ssid-name";
+const char* password = "password";
 
 // Create AsyncWebServer object on port 80
 AsyncWebServer server(80);
