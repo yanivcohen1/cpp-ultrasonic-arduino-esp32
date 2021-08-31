@@ -1,5 +1,5 @@
 // user lib
-#include "Header/UltrasinicPage.h"
+#include "UltrasinicPage.h"
 
 namespace UltrasinicPage {
     // HW pins
@@ -140,8 +140,8 @@ namespace UltrasinicPage {
         OLED_display();
     }
 
-    void setup(AsyncWebServer &_server) {
-        server = &_server;
+    void setup(AsyncWebServer *_server) {
+        server = _server;
         Ultrasinic::setup(trigPin, echoPin);
         pinMode(ledPin, OUTPUT);  // declare the ledPin as an OUTPUT
         pinMode(trigPin, OUTPUT);

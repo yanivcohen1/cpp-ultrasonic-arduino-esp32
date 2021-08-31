@@ -1,4 +1,4 @@
-#include "Header/user_lib/Sh1106DispClass.h"
+#include "user_lib/Sh1106DispClass.h"
 
 // const char s[] PROGMEM = "Progmem"; // PROGMEM meens write to flash and to read it: (class __FlashStringHelper *)s
 U8G2_SH1106_128X64_NONAME_F_HW_I2C* SH1106_DIP::u8g2_s = NULL;
@@ -9,7 +9,7 @@ SH1106_DIP::SH1106_DIP() : u8g2(U8G2_R0, /* reset=*/ U8X8_PIN_NONE) {
 
 void SH1106_DIP::setup() {
     SH1106_DIP::u8g2_s->begin();
-    Serial.println("setup");
+    // Serial.println("setup");
 };
 
 void SH1106_DIP::dispay(String line1, String line2, String line3, String line4) {

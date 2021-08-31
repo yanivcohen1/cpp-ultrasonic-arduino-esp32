@@ -1,7 +1,7 @@
 // user lib
-#include "Header/user_lib/Sh1106DispClass.h" // display SH1106_DIP class
-#include "Header/UltrasinicPage.h" // UltrasinicPage
-#include "Header/user_lib/all_tests.h"
+#include "user_lib/Sh1106DispClass.h" // display SH1106_DIP class
+#include "UltrasinicPage.h" // UltrasinicPage
+#include "user_lib/all_tests.h"
 // libs
 #include "Arduino.h" // arduino
 #include <WiFi.h> // wifi
@@ -19,8 +19,8 @@
 
 SH1106_DIP sh1106_dip; // screen display
 
-const char* ssid = "ssid-name";
-const char* password = "password";
+const char* ssid = "HOTBOX-89BA-yaniv";
+const char* password = "0528728544";
 
 // Create AsyncWebServer object on port 80
 AsyncWebServer server(80);
@@ -28,7 +28,7 @@ AsyncWebServer server(80);
 
 void setup(void) {
   Serial.begin(115200);
-  Serial.println("in setup");
+  // Serial.println("in setup");
   sh1106_dip.setup();
   // Initialize SPIFFS
   if(!SPIFFS.begin(true)){
@@ -44,8 +44,8 @@ void setup(void) {
   // Print ESP Local IP Address
   Serial.println(WiFi.localIP());
 
-  // initWebSocket();
-  UltrasinicPage::setup(server);
+  //ffs_setup();
+  
   // load index.html
   server.on("/", HTTP_GET, [](AsyncWebServerRequest *request){
     request->send(SPIFFS, "/index.html", "text/html");
@@ -59,12 +59,12 @@ void setup(void) {
   server.on("/style.css", HTTP_GET, [](AsyncWebServerRequest *request){
     request->send(SPIFFS, "/style.css", "text/css");
   });
+  // start UltrasinicPage
+  UltrasinicPage::setup(&server);
   // Start ElegantOTA
   AsyncElegantOTA.begin(&server);    
   // Start server
   server.begin();
-
-  // tester_str_list();
 }
 
 void loop(void) {
