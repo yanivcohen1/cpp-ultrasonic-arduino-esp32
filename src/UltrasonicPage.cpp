@@ -99,7 +99,7 @@ namespace UltrasinicPage {
         String line2 = String("Distance is: ") + String(current_distance);
         String line3 = String("Distance Set ") + String(sliderIn);
         String line4 = String("Alarm is ") + String(ledOn ? "ON" : "OFF");
-        SH1106_DIP::dispay(line1, line2, line3, line4);
+        userlib::Sh1106DispClass::SH1106_DIP::dispay(line1, line2, line3, line4);
     }
 
     void main_loop() {  // main loop delay 1s

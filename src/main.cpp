@@ -17,7 +17,7 @@
 //int echoPin = 15; // Pin.IN, pull=None
 //int trigPin = 2; // Pin.OUT, pull=None
 
-SH1106_DIP sh1106_dip; // screen display
+userlib::Sh1106DispClass::SH1106_DIP sh1106_dip; // screen display
 
 const char* ssid = "HOTBOX-89BA-yaniv";
 const char* password = "0528728544";

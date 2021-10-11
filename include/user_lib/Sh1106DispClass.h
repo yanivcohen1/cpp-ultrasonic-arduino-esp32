@@ -8,6 +8,7 @@
 #include "Arduino.h"
 #include <U8g2lib.h>
 
+namespace userlib{ namespace Sh1106DispClass {
 class SH1106_DIP {
 
     private:
@@ -18,3 +19,4 @@ class SH1106_DIP {
         void setup();
         static void dispay(String l1, String l2, String l3, String l4);
 };
+}}

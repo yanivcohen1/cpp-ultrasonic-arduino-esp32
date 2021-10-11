@@ -1,5 +1,6 @@
 #include "user_lib/Sh1106DispClass.h"
 
+namespace userlib{ namespace Sh1106DispClass {
 // const char s[] PROGMEM = "Progmem"; // PROGMEM meens write to flash and to read it: (class __FlashStringHelper *)s
 U8G2_SH1106_128X64_NONAME_F_HW_I2C* SH1106_DIP::u8g2_s = NULL;
 
@@ -23,3 +24,4 @@ void SH1106_DIP::dispay(String line1, String line2, String line3, String line4) 
   SH1106_DIP::u8g2_s->sendBuffer();					// transfer internal memory to the display
   delay(10); // 10ms to display 
 }
+}}
