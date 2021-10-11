@@ -120,7 +120,7 @@ namespace UltrasinicPage {
                 markForSave = false;
             }
         }
-        int distance = Ultrasinic::ultrasinicDistance();
+        int distance = userlib::Ultrasinic::ultrasinicDistance();
         if (distance > 180 && current_distance == 180)
             return;
         if (distance > 180 && current_distance != 180) current_distance = 180;
@@ -142,7 +142,7 @@ namespace UltrasinicPage {
 
     void setup(AsyncWebServer *_server) {
         server = _server;
-        Ultrasinic::setup(trigPin, echoPin);
+        userlib::Ultrasinic::setup(trigPin, echoPin);
         pinMode(ledPin, OUTPUT);  // declare the ledPin as an OUTPUT
         pinMode(trigPin, OUTPUT);
         pinMode(echoPin, INPUT);

@@ -1,6 +1,6 @@
 #include "user_lib/Ultrasinic.h"
 
-namespace Ultrasinic
+namespace userlib{ namespace Ultrasinic
 {
   int calcDisctance = 0;
   static int trigPin = 0;
@@ -50,4 +50,4 @@ namespace Ultrasinic
       calcDisctance = send;
       return send; // distace in (cm)
   }
-}
+}}

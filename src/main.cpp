@@ -1,7 +1,7 @@
 // user lib
 #include "user_lib/Sh1106DispClass.h" // display SH1106_DIP class
 #include "UltrasinicPage.h" // UltrasinicPage
-#include "user_lib/all_tests.h"
+#include "user_lib/testers/all_tests.h"
 // libs
 #include "Arduino.h" // arduino
 #include <WiFi.h> // wifi
@@ -19,8 +19,8 @@
 
 SH1106_DIP sh1106_dip; // screen display
 
-const char* ssid = "ssid-name";
-const char* password = "password";
+const char* ssid = "HOTBOX-89BA-yaniv";
+const char* password = "0528728544";
 
 // Create AsyncWebServer object on port 80
 AsyncWebServer server(80);

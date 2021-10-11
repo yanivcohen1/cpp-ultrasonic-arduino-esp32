@@ -2,8 +2,8 @@
 #include <stdlib.h>     /* qsort */
 #include "Arduino.h"
 
-namespace Ultrasinic
+namespace userlib{ namespace Ultrasinic
 {
     void setup(int trigPin, int echoPin);
     int ultrasinicDistance();
-}
+}}
